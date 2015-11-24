@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Restaurant Tracker</string>
+
+    <string name="edit_message">Enter a message</string>
+    <string name="button_send">Send</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="title_activity_main" translatable="false">MainActivity</string>
+    <string name="title_activity_display_message">My Message</string>
+    <string name="title_activity_detail_list">Detail List</string>
+    <string name="title_activity_restaurant_list" translatable="false">RestaurantList</string>
+    <string name="id" translatable="false">ID</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="idString">The id is</string>
+    </resources>
