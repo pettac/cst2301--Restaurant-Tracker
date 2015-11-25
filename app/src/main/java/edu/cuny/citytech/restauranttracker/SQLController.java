@@ -28,21 +28,31 @@ public class SQLController {
         dbhelper.close();
     }
 
-    public void insertData(String resname, float score) {
+    public void insertData(String resname, Float score, String address1, String address2, String phone) {
         open();
         ContentValues cv = new ContentValues();
+        if(address1 == null){
+            System.out.println("address232");
+        }
+
         cv.put(MyDbHelper.RESTAURANT_NAME, resname);
         cv.put(MyDbHelper.RESTAURANT_RATING, score);
+        cv.put(MyDbHelper.RESTAURANT_ADDRESS1,address1);
+        cv.put(MyDbHelper.RESTAURANT_ADDRESS2, address2);
+        cv.put(MyDbHelper.RESTAURANT_PHONE, phone);
         database.insert(MyDbHelper.TABLE_RESTAURANT, null, cv);
         close();
 
     }
 
-    public void editData(int id, String resname, float score) {
+    public void editData(int id, String resname, Float score, String address1, String address2, String phone) {
         open();
         ContentValues cv = new ContentValues();
         cv.put(MyDbHelper.RESTAURANT_NAME, resname);
         cv.put(MyDbHelper.RESTAURANT_RATING, score);
+        cv.put(MyDbHelper.RESTAURANT_ADDRESS1, address1);
+        cv.put(MyDbHelper.RESTAURANT_ADDRESS2, address2);
+        cv.put(MyDbHelper.RESTAURANT_PHONE, phone);
         database.update(MyDbHelper.TABLE_RESTAURANT, cv, "_id=" + id, null);
         close();
 

@@ -12,16 +12,24 @@ public class MyDbHelper extends SQLiteOpenHelper {
     public static final String RESTAURANT_ID = "_id";
     public static final String RESTAURANT_NAME = "resname";
     public static final String RESTAURANT_RATING = "score";
+    public static final String RESTAURANT_ADDRESS1 = "address1";
+    public static final String RESTAURANT_ADDRESS2 = "address2";
+    public static final String RESTAURANT_PHONE = "phone";
     // DATABASE INFORMATION
     static final String DB_NAME = "MEMBER.DB";
-    static final int DB_VERSION = 4;
+    static final int DB_VERSION = 6;
 
     // TABLE CREATION STATEMENT
 
     private static final String CREATE_TABLE = "create table " + TABLE_RESTAURANT
-            + "(" + RESTAURANT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + RESTAURANT_NAME + " TEXT NOT NULL ," + RESTAURANT_RATING
-            + " FLOAT NOT NULL);";
+            + "("
+            + RESTAURANT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + RESTAURANT_NAME + " TEXT NOT NULL, "
+            + RESTAURANT_RATING + " FLOAT, "
+            + RESTAURANT_ADDRESS1 + " TEXT, "
+            + RESTAURANT_ADDRESS2 + " TEXT, "
+            + RESTAURANT_PHONE + " TEXT"
+            +");";
 
     public MyDbHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);

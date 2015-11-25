@@ -1,5 +1,5 @@
 package edu.cuny.citytech.restauranttracker;
- 
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -40,9 +40,7 @@ public class RestaurantList extends Activity {
         sqlcon = new SQLController(this);
 
         resName_et = (EditText) findViewById(R.id.fistname_et_id);
-        resName_main = resName_et.getText().toString();
         score_et = (RatingBar) findViewById(R.id.score_et_id);
-        score_main = score_et.getRating();
         addmem_btn = (Button) findViewById(R.id.addmem_btn_id);
         table_layout = (TableLayout) findViewById(R.id.tableLayout1);
 
@@ -156,12 +154,12 @@ public class RestaurantList extends Activity {
         @Override
         protected Void doInBackground(Void... params) {
 
-            String resName = resName_main;
-            float score = score_main;
+            String resName = resName_et.getText().toString();
+            float score = score_et.getRating();
 
             // inserting data
 
-            sqlcon.insertData(resName, score);
+            sqlcon.insertData(resName, score, null, null, null);
 
             // BuildTable();
             return null;
