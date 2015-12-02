@@ -78,7 +78,7 @@ public class RestaurantList extends Activity {
             row.setTag(R.string.id, c.getInt(0));
             row.setOnClickListener(detailsListener);
             // inner for loop
-            for (int j = 0; j < cols; j++) {
+            for (int j = 1; j < cols; j++) {
 
                 if(j==2){
                     RatingBar score = new RatingBar(this);
