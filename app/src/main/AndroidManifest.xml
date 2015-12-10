@@ -22,10 +22,6 @@
 
             >
         </activity>
-        <activity
-            android:name=".DetailList"
-            android:label="@string/title_activity_detail_list" >
-        </activity>
     </application>
 
 </manifest>

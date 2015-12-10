@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 public class ListFragment extends Fragment {
 
-    OnFragmentInteractionListener mListener;
+    DetailsListener mListener;
 
     TableLayout table_layout;
     SQLController sqlcon;
@@ -28,6 +28,11 @@ public class ListFragment extends Fragment {
         // Required empty public constructor
     }
 
+
+    public interface DetailsListener {
+
+        void detailsInteraction(int ints);
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,7 +67,7 @@ public class ListFragment extends Fragment {
     public void onStart() {
         super.onStart();
         try {
-            mListener = (OnFragmentInteractionListener) getActivity();
+            mListener = (DetailsListener) getActivity();
         } catch (ClassCastException e) {
             throw new ClassCastException(getActivity().toString()
                     + " must implement OnFragmentInteractionListener");
@@ -76,21 +81,6 @@ public class ListFragment extends Fragment {
     }
 
 
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(int ints);
-    }
 
     private void BuildTable() {
         table_layout.removeAllViews();
@@ -125,12 +115,11 @@ public class ListFragment extends Fragment {
                     row.addView(score);
                 }else{
                     TextView tv = new TextView(getActivity());
-                    tv.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
+                    tv.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,
                             TableRow.LayoutParams.WRAP_CONTENT));
-                    tv.setBackgroundResource(R.drawable.cell_shape);
                     tv.setGravity(Gravity.CENTER);
                     tv.setTextSize(18);
-                    tv.setPadding(0, 5, 0, 5);
+                    tv.setPadding(16,16,16,16);
 
                     tv.setText(c.getString(j));
 
@@ -155,7 +144,7 @@ public class ListFragment extends Fragment {
 
             if (mListener != null) {
                 System.out.println(v.getTag(R.string.id));
-                mListener.onFragmentInteraction(Integer.parseInt(v.getTag(R.string.id).toString()));
+                mListener.detailsInteraction(Integer.parseInt(v.getTag(R.string.id).toString()));
                 System.out.println(v.getTag(R.string.id).toString());
             }
         }

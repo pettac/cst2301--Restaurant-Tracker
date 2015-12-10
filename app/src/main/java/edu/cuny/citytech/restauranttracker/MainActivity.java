@@ -42,4 +42,36 @@ public class MainActivity extends Activity {
         System.out.println("yes");
     }
 
+    //action bar creation
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    /*
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //this nested if checks to see which action bar item was pressed based on the id assigned in xml page
+        //it then creates an intent which will specify which page to go to
+        //finally it starts the intent and takes the user to the specified page
+
+
+        if (id == R.id.add) {
+            Intent addIntent = new Intent(this, MainActivity.class); //replace Main.Activity.class with add activity
+            startActivity(addIntent);
+            return true;
+        }
+        else if (id == R.id.delete) {
+            Intent deleteIntent = new Intent(this, page1.class); //replace page1.class with delete activity
+            startActivity(deleteIntent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+*/
 }

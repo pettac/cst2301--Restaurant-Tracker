@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.cuny.citytech.restauranttracker.AddResFragment">
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_name"
+        android:layout_alignBottom="@+id/add_ratingBar"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/add_ratingBar"
+        android:hint="@string/enter_name" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_ratingBar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_address1"
+        android:layout_below="@+id/add_ratingBar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:hint="@string/enter_address" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_address2"
+        android:layout_below="@+id/add_address1"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/add_ratingBar"
+        android:hint="@string/enter_address2" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/add_phone"
+        android:layout_below="@+id/add_address2"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/add_ratingBar"
+        android:hint="@string/enter_phone" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        android:id="@+id/add_button"
+        android:onClick="addRes"
+        android:nestedScrollingEnabled="true"
+        android:layout_below="@+id/add_phone"
+        android:layout_alignParentStart="true"
+
+        android:width="190dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:id="@+id/cancel_button"
+        android:width="190dp"
+        android:layout_alignTop="@+id/add_button"
+        android:layout_toEndOf="@+id/add_button" />
+
+</RelativeLayout>

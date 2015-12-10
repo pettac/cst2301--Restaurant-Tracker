@@ -59,10 +59,28 @@ public class SQLController {
     }
     public void deleteData(int id) {
         open();
-        database.delete(MyDbHelper.TABLE_RESTAURANT,"_id=" + id, null);
+        database.delete(MyDbHelper.TABLE_RESTAURANT, "_id=" + id, null);
         close();
 
     }
+
+    public Cursor singleEntry(int row) {
+        open();
+        String[] allColumns = new String[] { MyDbHelper.RESTAURANT_ID, MyDbHelper.RESTAURANT_NAME,
+                MyDbHelper.RESTAURANT_RATING, MyDbHelper.RESTAURANT_ADDRESS1, MyDbHelper.RESTAURANT_ADDRESS2,MyDbHelper.RESTAURANT_PHONE };
+
+        Cursor c = database.query(MyDbHelper.TABLE_RESTAURANT, allColumns, "_id=?", new String[] {Integer.toString(row)}, null,
+                null, null);
+
+        if (c != null) {
+            c.moveToFirst();
+        }
+        close();
+        return c;
+
+    }
+
+
 
     public Cursor readEntry() {
 
