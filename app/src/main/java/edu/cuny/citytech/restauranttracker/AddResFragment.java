@@ -2,9 +2,12 @@ package edu.cuny.citytech.restauranttracker;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -32,9 +35,25 @@ public class AddResFragment extends Fragment {
         // applied to the fragment at this point so we can safely call the method
         // below that sets the article text.
 
+
+
+
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 
+        if (menu != null) {
+
+            menu.findItem(R.id.delete).setVisible(false);
+        }
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
 
 
 }

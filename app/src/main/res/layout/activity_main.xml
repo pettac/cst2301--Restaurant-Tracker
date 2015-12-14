@@ -2,7 +2,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:weightSum="1">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,6 +18,22 @@
             android:onClick="listActivity"
             />
     </LinearLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/higest_rating"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="0.45" >
+
+
+
+
+    </RelativeLayout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/latest_added"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="0.45" />
 
 
 </LinearLayout>

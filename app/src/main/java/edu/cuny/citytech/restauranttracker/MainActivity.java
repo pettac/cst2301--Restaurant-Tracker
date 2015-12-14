@@ -17,6 +17,16 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SingleRes fr = new SingleRes();
+        Bundle args = new Bundle();
+        args.putString("order", "highest");
+        fr.setArguments(args);
+        getFragmentManager().beginTransaction()
+                .add(R.id.higest_rating, fr).commit();
+
+
+
     }
     
 

@@ -64,13 +64,37 @@ public class SQLController {
 
     }
 
-    public Cursor singleEntry(int row) {
+    public Cursor singleEntry(Integer row, String order) {
+        if(order == null){
+            order = "";
+
+        }
+        Cursor c;
         open();
         String[] allColumns = new String[] { MyDbHelper.RESTAURANT_ID, MyDbHelper.RESTAURANT_NAME,
                 MyDbHelper.RESTAURANT_RATING, MyDbHelper.RESTAURANT_ADDRESS1, MyDbHelper.RESTAURANT_ADDRESS2,MyDbHelper.RESTAURANT_PHONE };
 
-        Cursor c = database.query(MyDbHelper.TABLE_RESTAURANT, allColumns, "_id=?", new String[] {Integer.toString(row)}, null,
-                null, null);
+
+        if (order.matches("latest")){
+
+            String orderBy = MyDbHelper.RESTAURANT_ID + " DESC";
+            c = database.query(MyDbHelper.TABLE_RESTAURANT, allColumns, null , null, null,
+                    null, orderBy);
+
+        }else if (order.matches("highest")){
+
+            String orderBy = MyDbHelper.RESTAURANT_RATING + " DESC";
+            c = database.query(MyDbHelper.TABLE_RESTAURANT, allColumns, null, null, null,
+                    null, orderBy);
+
+        }else{
+
+            c = database.query(MyDbHelper.TABLE_RESTAURANT, allColumns, "_id=?", new String[] {Integer.toString(row)}, null,
+                    null, null);
+        }
+
+
+
 
         if (c != null) {
             c.moveToFirst();
