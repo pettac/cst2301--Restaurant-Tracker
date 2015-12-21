@@ -1,0 +1,110 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/details"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/row_id"
+        android:layout_alignBottom="@+id/edit_ratingBar"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/edit_ratingBar"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:text="name"
+        android:id="@+id/name"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="18sp"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/score"
+        android:layout_width="match_parent"
+         />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/score"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd ="true"
+        android:isIndicator="true"/>
+
+    <TextView
+        android:text="address"
+        android:id="@+id/address1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="18sp"
+        android:layout_below="@+id/score"
+        android:layout_alignEnd="@+id/score"
+        />
+
+    <TextView
+        android:text="address"
+        android:id="@+id/address2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="18sp"
+        android:layout_below="@+id/address1"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:text="phone"
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="18sp"
+        android:layout_below="@+id/address2"
+        android:layout_alignParentStart="true"
+        android:onClick="callPhone" />
+
+    <Button
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Public"
+        android:id="@+id/button"
+        android:onClick="publicDirections"
+        android:layout_below="@+id/phone" />
+
+    <Button
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Car"
+        android:id="@+id/button2"
+        android:layout_toEndOf="@id/button"
+        android:onClick="carDirections"
+        android:layout_below="@+id/phone" />
+    <Button
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bike"
+        android:id="@+id/button3"
+        android:layout_toEndOf="@id/button2"
+        android:onClick="bikeDirections"
+        android:layout_below="@+id/phone" />
+    <Button
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Walking"
+        android:id="@+id/button4"
+        android:layout_toEndOf="@id/button3"
+        android:onClick="walkingDirections"
+        android:layout_below="@+id/phone" />
+
+
+</RelativeLayout>
+
+
+
