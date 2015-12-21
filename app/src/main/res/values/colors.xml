@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="primary" type="color">#316CE5</item>
+    <item name="primary_dark" type="color">#004BE5</item>
+    <item name="text_color_primary" type="color">#000000</item>
+
+
+</resources> 

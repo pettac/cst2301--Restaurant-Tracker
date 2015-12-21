@@ -231,7 +231,7 @@ public class RestaurantList extends Activity implements ListFragment.DetailsList
 
 
         // Makes the Name edit box and the rating mandatory or if addy 1 is filled and addy is not
-        if(res_name == null && res_score == null ){
+        if(res_name == null || res_score == null ){
 
             AlertDialog alertDialog = new AlertDialog.Builder(this).create();
             alertDialog.setTitle("Cannot Add");
@@ -445,6 +445,16 @@ public class RestaurantList extends Activity implements ListFragment.DetailsList
         i.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
         startActivity(i);
 
+    }
+
+    public void callPhone (View view){
+        TextView phone = (TextView) findViewById(R.id.phone);
+
+        String uri = "tel:" +  phone.getText().toString().trim();
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse(uri));
+        startActivity(intent);
+        System.out.println("phone called");
     }
 
 }

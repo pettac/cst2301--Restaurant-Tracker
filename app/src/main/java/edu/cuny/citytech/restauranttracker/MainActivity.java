@@ -18,14 +18,21 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SingleRes fr = new SingleRes();
-        Bundle args = new Bundle();
-        args.putString("order", "highest");
-        fr.setArguments(args);
-        getFragmentManager().beginTransaction()
-                .add(R.id.higest_rating, fr).commit();
+        if (findViewById(R.id.higest_rating) != null) {
 
+            if (savedInstanceState != null) {
+                return;
+            }
 
+            //Generates Fragment and adds to container
+            SingleRes fr = new SingleRes();
+            Bundle args = new Bundle();
+            args.putString("order", "highest");
+            fr.setArguments(args);
+            getFragmentManager().beginTransaction()
+                    .add(R.id.higest_rating, fr).commit();
+
+        }
 
     }
     
@@ -56,6 +63,7 @@ public class MainActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        menu.findItem(R.id.delete).setVisible(false);
         return true;
     }
 

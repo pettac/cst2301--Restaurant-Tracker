@@ -3,4 +3,13 @@
     <string name="app_name">Restaurant Tracker</string>
     <string name="hello_world">Hola Mundo!</string>
     <string name="idString">El id es</string>
+    <string name="add">Agregar</string>
+    <string name="button_send">Enviar</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Borrar</string>
+    <string name="edit">Editar</string>
+    <string name="edit_message">Ingresar un Mensaje</string>
+    <string name="enter_address">Ingresar Su direction</string>
+    <string name="action_search">Buscar</string>
+    <string name="enter_address2">Ingresar</string>
 </resources>
