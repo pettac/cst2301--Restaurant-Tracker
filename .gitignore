@@ -4,3 +4,11 @@
 .DS_Store
 /build
 /captures
+*.gradle
+*.properties
+*.bat
+gradlew
+*.idea
+*.iml
+/gradle/*
+*.pro
